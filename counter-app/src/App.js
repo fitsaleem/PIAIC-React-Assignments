@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Increment } from "./components/Increment";
+
 const App = () => {
   const [count, setCount] = useState(0)
   
@@ -17,9 +18,9 @@ const App = () => {
       </div>
 
       <div className="buttons">
-        <button onClick={() => setCount(count + 1)}>Increment ++</button>
-        <button onClick={() => setCount(count - 1)}disabled={count === 0}>Decrement --</button>
-        <button onClick={() => setCount(0)}disabled={count === 0}>Reset</button>
+        <button onClick={Increment}>Increment ++</button>
+        <button>Decrement --</button>
+        <button>Reset</button>
       </div>
 
     </div>
