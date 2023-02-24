@@ -22,7 +22,7 @@ h1 {
   text-align: center;
 }
 
-.inputfield input {
+.inputfield span {
   height: 50px;
   text-align: center;
   width: 300px;
