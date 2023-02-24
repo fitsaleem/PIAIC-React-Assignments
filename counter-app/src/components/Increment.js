@@ -1,8 +1,7 @@
-let number = 0
-const Increment = () => {
-let number = number++;
 
-return( {Increment} )
+const Increment = () => {
+    setCount(count + 1)
 }
 
 export { Increment }
+
