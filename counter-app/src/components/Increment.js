@@ -5,4 +5,4 @@ let number = number++;
 return( {Increment} )
 }
 
-export {Increment}
+export { Increment }
