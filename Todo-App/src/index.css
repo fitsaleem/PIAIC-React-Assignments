@@ -1,0 +1,48 @@
+h1 {
+  color: red;
+}
+
+.container {
+  border: 2px solid blue;
+  height: 500px;
+  width: 500px;
+  margin: 50px auto;
+  font-family: 'Baloo Bhai 2', cursive;
+
+
+}
+
+.heading {
+  display: inline;
+  text-align: center;
+  font-size: 30px;
+}
+
+.inputfield {
+  text-align: center;
+}
+
+.inputfield span {
+  height: 50px;
+  text-align: center;
+  width: 300px;
+  margin-bottom: 50px;
+  font-size: 40px;
+  border-radius: 10px;
+
+}
+
+.buttons button {
+  display: block;
+  width: 400px;
+  padding: 10px;
+  margin: 15px;
+  margin-left: 50px;
+  height: 50px;
+  font-size: 22px;
+  font-family: 'Baloo Bhai 2', cursive;
+  border-radius: 10px;
+
+  
+}
+
