@@ -1,30 +1,30 @@
-// main logic of application is in this file. we will link external components to this.
+// App.js
 
-import React, { useState } from "react";
-import { Increment } from "./components/Increment";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import styled from 'styled-components';
+import Header from './components/Header';
+import Navigation from './components/Navigation';
+import ExpenseList from './components/ExpenseList';
+import ExpenseForm from './components/ExpenseForm';
 
-const App = () => {
-  const [count, setCount] = useState(0)
-  
-  return (<>
-    <div className="container">
+const Container = styled.div`
+  margin-top: 2rem;
+`;
 
-      <div className="heading">
-        <h1>Counter App</h1>
-      </div>
-
-      <div className="inputfield">
-       <span>{count}</span>
-      </div>
-
-      <div className="buttons">
-        <button onClick={Increment}>Increment ++</button>
-        <button>Decrement --</button>
-        <button>Reset</button>
-      </div>
-
-    </div>
-  </>)
-};
+function App() {
+  return (
+    <Router>
+      <Header />
+      <Navigation />
+      <Container className="container">
+        <Switch>
+          <Route exact path="/" component={ExpenseList} />
+          <Route exact path="/add-expense" component={ExpenseForm} />
+        </Switch>
+      </Container>
+    </Router>
+  );
+}
 
 export default App;
