@@ -1,30 +1,33 @@
-// main logic of application is in this file. we will link external components to this.
+import React, { useState } from 'react';
+import TodoForm from './components/TodoForm';
+import TodoList from './components/TodoList';
 
-import React, { useState } from "react";
-import { Increment } from "./components/Increment";
+function App() {
+  const [todos, setTodos] = useState([]);
 
-const App = () => {
-  const [count, setCount] = useState(0)
-  
-  return (<>
-    <div className="container">
+  const handleAdd = (newTodo) => {
+    setTodos([...todos, newTodo]);
+  };
 
-      <div className="heading">
-        <h1>Counter App</h1>
-      </div>
+  const handleDelete = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
 
-      <div className="inputfield">
-       <span>{count}</span>
-      </div>
+  const handleToggle = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
 
-      <div className="buttons">
-        <button onClick={Increment}>Increment ++</button>
-        <button>Decrement --</button>
-        <button>Reset</button>
-      </div>
-
+  return (
+    <div className="App">
+      <h1>Todo List</h1>
+      <TodoForm onAdd={handleAdd} />
+      <TodoList todos={todos} onDelete={handleDelete} onToggle={handleToggle} />
     </div>
-  </>)
-};
+  );
+}
 
 export default App;
